@@ -1,0 +1,13 @@
+question 12
+
+First go to =https://www.ensembl.org/
+Paste the rs number and select mouse as species
+LocationChromosome 4:136443949  (forward strand): ON the chromosome location bar at the top of the screen.
+
+question 13
+
+First go to =https://www.ensembl.org/
+Paste the MYCN number and select zebrafish as species.
+Chromosome 20: 33,294,428-33,299,384 
+
+curl 'http://rest.ensembl.org/sequence/region/zebrafish/20: 33294428..33294528:1' -H 'Content-type:text/x-fasta'

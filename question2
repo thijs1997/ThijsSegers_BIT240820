@@ -1,0 +1,17 @@
+UNF group the data together
+(patientNumber,PatientName,Birthdate,PrescriptionNumber,Medicne,Dosage,DoctorNumber,Doctor,Assistant)
+
+1NF looking if there are no repeating groups
+(patientNumber,PatientName,Birthdate,PrescriptionNumber,Medicne,Dosage,DoctorNumber,Doctor,Assistant)
+
+2NF eliminate partial key dependencies(
+patientNumber,PatientName,Birthdate)
+(PrescriptionNumber,Medicne,Dosage)
+(DoctorNumber,Doctor,Assistant)
+(patientName,PrescriptionNumber,DoctorNumber)
+
+3NF check whether all non-key attributes are not dependent on another non-key attribute. 
+(patientNumber,PatientName,Birthdate)
+(PrescriptionNumber,Medicne,Dosage)
+(DoctorNumber,Doctor,Assistant)
+(patientName,PrescriptionNumber,DoctorNumber)

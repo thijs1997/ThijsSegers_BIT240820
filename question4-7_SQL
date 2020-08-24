@@ -1,0 +1,25 @@
+question 4
+
+SELECT gene_name, (seq_region_end - seq_region_start + 1) AS length from gene order by length asc limit 1;genome:TRDD1   
+
+lenght:8
+
+question 5
+
+SELECT g.gene_name, count(*) as nr_exons FROM gene g join transcript t on g.gene_id = t.gene_id group by g.gene_id order by nr_exons desc limit 1;
+
+gene name : 'NDRG2', number of exons : '80'
+
+question 6
+
+select chromosome, count(*) AS most_genes FROM test2.gene WHERE description like '%cancer%'GROUP by chromosome ORDER BY most_genes DESC limit 1 offset 1;
+chromsome : 9  genes: 5
+
+SELECT count(*) AS ammount_transcripts FROM gene g JOIN transcript t ON g.gene_id = t.gene_id WHERE g.chromosome = '9' order by ammount_transcripts;
+amount transcripts: 6595
+
+question 7 
+SELECT COUNT(*)FROM exon;
+SELECT COUNT(*)FROM exon_transcript;
+
+Exon transcript has a lot more rows because there are more transcripts_id can be used more than once in the exon_transcript because its a forgein key

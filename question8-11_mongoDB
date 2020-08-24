@@ -1,0 +1,19 @@
+question 8
+
+db.getCollection('bioinf_mongo_examen').find({"method_of_admission": ["GEL;DENTAL"]},{drug:1,_id:0})
+
+1
+
+question 9
+
+db.getCollection('bioinf_mongo_examen').find({percentage_of_side_effects:{$gt:12}}).count()
+
+12
+
+question 10
+
+db.getCollection('bioinf_mongo_examen').aggregate([{$group: {_id:"$company", avg:{$avg:"$percentage_of_side_effects"}}},{$match:{avg:{$gt:10}}},{$sort:{avg:-1}}])
+
+question 11
+
+db.getCollection('bioinf_mongo_examen').aggregate([{$group: {_id:"$company",min: {$min: "$percentage_of_side_effects"},max: {$max: "$percentage_of_side_effects"},drugs: {$sum: 1}}},{$match: {drugs: {$gt:1}}}])
